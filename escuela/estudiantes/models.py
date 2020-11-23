@@ -10,4 +10,12 @@ class Estudiante(models.Model):
     estatus = models.CharField(max_length=200)
     carrera = models.CharField(max_length=200)
     creditos = models.CharField(max_length=200) 
-    clase = models.ManyToManyField(Clase, related_name='clase')
+    clases = models.ManyToManyField(Clase, through=u'ListaClases', related_name='clase')
+    
+    def __str__(self):
+        return self.nombre
+
+class ListaClases(models.Model):
+    clase = models.ForeignKey(Clase, on_delete=models.CASCADE)
+    estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
+

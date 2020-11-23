@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Lista de clases</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Lista de clases</h1>
+{% if clases %}
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Profesor</th>
+                <th scope="col">Horario</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Creditos</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for clase in clases %}
+            <th  scope="row" >{{ clase.id }}</th>
+            <td><a href="{{ clase.id }}">{{ clase.nombre }}</a></td>
+            <td>{{ clase.profesor }}</td>
+            <td>{{ clase.dia }}</td>
+            <td>{{ clase.hora }}</td>
+            <td>{{ clase.creditos }}</td>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>NO existen datos</p>
+{% endif %}
+</body>
+</html>

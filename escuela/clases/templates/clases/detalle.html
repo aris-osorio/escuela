@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Lista de clases</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Detalle de clase</h1>
+{% if clase %}
+    <div class="d-flex">
+        <div class="m-3 d-flex col-6">
+            <div class="m-2">
+                <img src="{{clase.imagen}}" class="rounded" alt="{{claseS.id}}">
+            </div>
+            <div class="m-2">
+                <table>
+                    <tr><td>Codigo: {{clase.id}}</td></tr>
+                    <tr><td>Nombre: {{clase.nombre}}</td></tr>
+                    <tr><td>Profesor: {{clase.profesor}}</td></tr>
+                    <tr><td>Horario: {{clase.dia}}</td></tr>
+                    <tr><td>Hora: {{clase.hora}}</td></tr>
+                    <tr><td>Creditos: {{clase.creditos}}</td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="m-3 col-4">
+            <h2>Lista de asistencia</h2>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if lista %}
+                        {% for estudiante in lista %}
+                            <th>{{ estudiante.estudiante_id }}</th>
+                            <td><a href="http://127.0.0.1:8000/estudiantes/{{ estudiante.estudiante_id }}">{{ estudiante.estudiante }}</a></td>
+                        {% endfor %}
+                    {% else %}
+                        <tr><td>N/A</td></tr>
+                    {% endif%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% else %}
+    <p>NO existen datos</p>
+{% endif %}
+</body>
+</html>
