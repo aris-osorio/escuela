@@ -39,8 +39,10 @@
                 <tbody>
                     {% if lista %}
                         {% for estudiante in lista %}
-                            <th>{{ estudiante.estudiante_id }}</th>
-                            <td><a href="http://127.0.0.1:8000/estudiantes/{{ estudiante.estudiante_id }}">{{ estudiante.estudiante }}</a></td>
+                            <tr>
+                                <th>{{ estudiante.estudiante_id }}</th>
+                                <td><a href="http://127.0.0.1:8000/estudiantes/{{ estudiante.estudiante_id }}">{{ estudiante.estudiante }}</a></td>
+                            </tr>
                         {% endfor %}
                     {% else %}
                         <tr><td>N/A</td></tr>

@@ -40,8 +40,10 @@
                 <tbody>
                     {% if lista %}
                         {% for clase in lista %}
-                            <th>{{ clase.clase_id }}</th>
-                            <td><a href="http://127.0.0.1:8000/clases/{{ clase.clase_id }}">{{ clase.clase }}</a></td>
+                            <tr>
+                                <th>{{ clase.clase_id }}</th>
+                                <td><a href="http://127.0.0.1:8000/clases/{{ clase.clase_id }}">{{ clase.clase }}</a></td>
+                            </tr>
                         {% endfor %}
                     {% else %}
                         <tr><td>N/A</td></tr>

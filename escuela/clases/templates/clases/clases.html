@@ -24,12 +24,14 @@
         </thead>
         <tbody>
         {% for clase in clases %}
-            <th  scope="row" >{{ clase.id }}</th>
-            <td><a href="{{ clase.id }}">{{ clase.nombre }}</a></td>
-            <td>{{ clase.profesor }}</td>
-            <td>{{ clase.dia }}</td>
-            <td>{{ clase.hora }}</td>
-            <td>{{ clase.creditos }}</td>
+            <tr>
+                <td  scope="row" >{{ clase.id }}</td>
+                <td><a href="{{ clase.id }}">{{ clase.nombre }}</a></td>
+                <td>{{ clase.profesor }}</td>
+                <td>{{ clase.dia }}</td>
+                <td>{{ clase.hora }}</td>
+                <td>{{ clase.creditos }}</td>
+            </tr>
         {% endfor %}
         </tbody>
     </table>

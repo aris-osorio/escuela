@@ -25,13 +25,15 @@
         </thead>
         <tbody>
         {% for estudiante in estudiantes %}
-            <th  scope="row" >{{ estudiante.id }}</th>
-            <td><a href="{{ estudiante.id }}">{{ estudiante.nombre }}</a></td>
-            <td>{{ estudiante.paterno }}</td>
-            <td>{{ estudiante.materno }}</td>
-            <td>{{ estudiante.estatus }}</td>
-            <td>{{ estudiante.carrera }}</td>
-            <td>{{ estudiante.creditos }}</td>
+            <tr>
+                <th  scope="row" >{{ estudiante.id }}</th>
+                <td><a href="{{ estudiante.id }}">{{ estudiante.nombre }}</a></td>
+                <td>{{ estudiante.paterno }}</td>
+                <td>{{ estudiante.materno }}</td>
+                <td>{{ estudiante.estatus }}</td>
+                <td>{{ estudiante.carrera }}</td>
+                <td>{{ estudiante.creditos }}</td>
+            </tr>
         {% endfor %}
         </tbody>
     </table>

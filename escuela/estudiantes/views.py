@@ -10,5 +10,5 @@ def estudiantes(request):
 
 def detalle_estudiante(request, estudiante_id):
     detalle = Estudiante.objects.get(id = estudiante_id)
-    lista = ListaClases.objects.filter(clase = estudiante_id)
+    lista = ListaClases.objects.filter(estudiante = estudiante_id)
     return render(request, 'estudiantes/detalle.html', {'estudiante': detalle, 'lista': lista})
